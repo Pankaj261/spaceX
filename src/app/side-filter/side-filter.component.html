@@ -1,0 +1,37 @@
+<div class="col-12 card">
+    <div class="my-3">
+        <h3>{{const.filters}}</h3>
+        <div>
+            <p>{{const.launchYear}}</p>
+            <div>
+                <button type="button" class="btn btn-success col-5 mt-2"
+                    [ngClass]="i % 2 === 0 ? 'float-left' : 'float-right'" *ngFor="let year of years; index as i"
+                    (click)="setPayload('launch_year', year)">
+                    {{year}}
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div>
+            <p class="my-2">{{const.successfulLaunch}}</p>
+            <div>
+                <button type="button" [ngClass]="i % 2 === 0 ? 'float-left' : 'float-right'"
+                    *ngFor="let value of const.settingArray; index as i" class="btn btn-success col-5"
+                    (click)="setPayload('launch_success', value)">
+                    {{value | titlecase}}
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div>
+            <p class="my-2">{{const.successfulLanding}}</p>
+            <div>
+                <button type="button" [ngClass]="i % 2 === 0 ? 'float-left' : 'float-right'"
+                    *ngFor="let value of const.settingArray; index as i" class="btn btn-success col-5"
+                    (click)="setPayload('land_success', value)">
+                    {{value | titlecase}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
